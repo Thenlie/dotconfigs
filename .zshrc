@@ -41,16 +41,14 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	asdf
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+    git
+    asdf
+    zsh-autosuggestions
+    zsh-syntax-highlighting
     vi-mode
 )
 
@@ -96,7 +94,6 @@ eval $(/opt/homebrew/bin/brew shellenv)
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 . ~/.asdf/plugins/java/set-java-home.zsh
-
 
 # bun completions
 [ -s "/Users/leithencrider/.bun/_bun" ] && source "/Users/leithencrider/.bun/_bun"
