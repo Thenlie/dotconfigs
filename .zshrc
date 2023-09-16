@@ -86,13 +86,17 @@ alias pi="pnpm install" # helper for installation
 alias px="pnpm run" # helper to run package scripts
 alias pxr="pnpm run -r" # helper to recursively run package scripts
 
+# npm aliases
+alias n="npm"
+alias nr="npm run"
+alias nrd="npm run dev"
+alias nrt="npm run test"
+
 eval $(/opt/homebrew/bin/brew shellenv)
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 . ~/.asdf/plugins/java/set-java-home.zsh
 
-# netskope
-export REQUESTS_CA_BUNDLE=/Library/Application\ Support/Netskope/STAgent/download/nscacert_combined.pem
 
 # bun completions
 [ -s "/Users/leithencrider/.bun/_bun" ] && source "/Users/leithencrider/.bun/_bun"
