@@ -1,0 +1,19 @@
+[user]
+	name = Leithen Crider
+	email = leithen113@gmail.com
+[core]
+	excludesfile = /Users/leithencrider/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[pager]
+	branch = false
+[commit]
+	template = /Users/leithencrider/.stCommitMsg
+[alias]
+    lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+	update = !git fetch origin develop && git rebase origin/develop
