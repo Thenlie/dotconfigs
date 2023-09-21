@@ -77,6 +77,7 @@ alias gld="git pull origin develop"
 alias gbdall="gb | grep -v "develop" | grep -v "release" | xargs git branch -D"
 alias glols="git log --pretty=format:"%h%x09%an%x09%ad%x09%s""
 alias glb="git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[\$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr(\$2, 1, length(\$2)-1), \$1)}'"
+alias glnp='f() { git --no-pager log --pretty=oneline --abbrev-commit -${1:-"10"} };f'
 
 # pnpm aliases
 alias p="pnpm" # used for any general command
@@ -90,6 +91,15 @@ alias nr="npm run"
 alias nrd="npm run dev"
 alias nrt="npm run test"
 
+# man page formatting
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
 eval $(/opt/homebrew/bin/brew shellenv)
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
 
@@ -97,4 +107,3 @@ eval $(/opt/homebrew/bin/brew shellenv)
 
 # bun completions
 [ -s "/Users/leithencrider/.bun/_bun" ] && source "/Users/leithencrider/.bun/_bun"
-
