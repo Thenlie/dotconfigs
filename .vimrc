@@ -26,3 +26,6 @@ set hlsearch
 set ruler
 
 set stl=%n\:%f%r%m\ \|%{&ff}\/%{&fenc}\|\ \|%l\:%c\/%L\L\|\}
+
+" use fzf
+set rtp+=/opt/homebrew/opt/fzf
