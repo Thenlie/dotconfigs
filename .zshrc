@@ -71,6 +71,7 @@ alias ls="ls --color=tty"
 alias pip3="pip"
 alias python3="python"
 alias python2="/Users/leithencrider/.pyenv/versions/2.7.18/bin/python"
+alias v='fd --type f --hidden --exclude .git | fzf | xargs -o vim'
 
 # git aliases
 alias gld="git pull origin develop"
